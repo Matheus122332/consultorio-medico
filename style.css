@@ -1,0 +1,188 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(360deg, #A3C4F3, #B2E6D4);
+    background-size: 600% 600%;
+    animation: aurora 15s ease infinite;
+}
+@keyframes aurora { 
+    0% { 
+        background-position: 0% 0%; 
+    } 
+    50% { 
+        background-position: 100% 100%; 
+    } 
+    100% { 
+        background-position: 0% 0%; 
+    }
+}
+/* Estilo das partículas */
+.particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(39, 76, 119, 0.8); /* Azul escuro */
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: 0 0 10px rgba(39, 76, 119, 0.8), 0 0 20px rgba(39, 76, 119, 0.8);
+    animation: particle 0.5s linear;
+}
+
+
+@keyframes particle {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+/*Inicio criar conta*/
+@keyframes slideIn { 
+    from { 
+        transform: translateX(100%);
+        opacity: 0; 
+    } 
+    to { 
+        transform: translateX(0); 
+        opacity: 1; 
+    } 
+}
+.titulo-login {
+    margin-bottom: 30px; 
+}
+h1 {
+    font-size: 2.5em;
+    color: #333333d8;
+}
+.formulario {
+    background: rgba(255, 255, 255, 0.9); /* Fundo com transparência */
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 600px;
+    max-height: 700px; /* Ajuste a altura máxima */
+    overflow-y: auto; /* Permite rolagem se necessário */
+    overflow-x: hidden; /* Esconde rolagem horizontal */ 
+}
+.campos {
+    margin-bottom: 5px;
+    position: relative;
+}
+.mensagem-erro { 
+    text-align: center; 
+    color: #FF0000; /* Vermelho para destacar o erro */ 
+    font-weight: bold; 
+    margin-bottom: 15px;  
+    animation: slideIn 1s ease-out; 
+} 
+.erro-mensagem { /* erro cpf*/
+    position: absolute; 
+    top: 28px; 
+    left: 75%; 
+    font-size: 1.1em; 
+    color: #FF0000; 
+    margin-top: 5px; 
+}
+input.erro { 
+    border-bottom: 3px solid #FF0000;
+}
+label {
+    display: block;
+    margin-left: 12px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #08080896;
+}
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="tel"],
+input[type="password"],
+select {
+    width: 95%;
+    padding: 10px;
+    outline: none;
+    border: none; 
+    border-bottom: 3px solid #000000a8; 
+    margin-bottom: 5px;
+    background: transparent; /* Remove fundo */
+    margin-left: 12px;
+    margin-right: 10px;
+    transition: transform 0.3s ease, border-bottom-color 0.3s ease, box-shadow 0.3s ease, margin-top 0.3s ease;
+}
+::placeholder { 
+    font-size: 15px; /* Aumenta o tamanho do texto do placeholder */ 
+    color: #a5a2a2; /* Cor do placeholder */ 
+}
+input[type="text"]:not(:placeholder-shown), 
+input[type="email"]:not(:placeholder-shown), 
+input[type="number"]:not(:placeholder-shown), 
+input[type="tel"]:not(:placeholder-shown), 
+input[type="password"]:not(:placeholder-shown), 
+select:not(:placeholder-shown) { 
+    font-size: 16px; /* Tamanho do texto após digitação */ 
+}
+input[type="submit"] {
+    width: 100%;
+    background-color: #009ACD;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 22px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+input[type="submit"]:hover {
+    background-color:#007BAC; 
+    transform: translateY(-5px);
+}
+p {
+    text-align: center;
+}
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+/* Responsividade */ 
+@media (max-width: 768px) { 
+    .formulario { 
+        max-width: 80%; /* Ajuste a largura para 90% da tela */ 
+    }
+    h1{
+        font-size: 2.5em;
+    }
+    input[type="submit"] {
+        font-size: 20px;
+     }
+    }
+@media (max-width: 480px) { 
+    .formulario { 
+        max-width: 80%; /* Ajuste a largura para 100% da tela */ 
+        padding: 10px; 
+    } 
+    h1{
+        font-size: 2em;
+    }
+    input[type="submit"]{
+        font-size: 15px;
+     }
+    }
+/* Fim Responsividade */ 
+/*fim criar conta*/
