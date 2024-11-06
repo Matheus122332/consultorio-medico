@@ -1,0 +1,287 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body, html { 
+    margin: 0; 
+    padding: 0; 
+    width: 100%; 
+    height: 100%; 
+    display: flex; 
+    justify-content: 
+    center; 
+    align-items: center; 
+    background-color: #f5f5f5; }
+/* Estilo das partículas */
+.particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(39, 76, 119, 0.8); /* Azul escuro */
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: 0 0 10px rgba(39, 76, 119, 0.8), 0 0 20px rgba(39, 76, 119, 0.8);
+    animation: particle 0.5s linear;
+}
+@keyframes particle {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+/*Inicio criar conta*/
+.titulo-login {
+    margin-bottom: 30px; 
+}
+h1 {
+    font-size: 2.5em;
+    color: #333333d8;
+}
+.formulario {
+    position: relative;
+    background: rgba(255, 255, 255, 0.9); /* Fundo com transparência */
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 600px;
+    max-height: 700px; /* Ajuste a altura máxima */
+    overflow-y: auto; /* Permite rolagem se necessário */
+    overflow-x: hidden; /* Esconde rolagem horizontal */ 
+    z-index: 10;
+}
+.campos {
+    margin-bottom: 5px;
+    position: relative;
+    z-index: 1;
+}
+
+.mensagem-erro { 
+    text-align: center; 
+    color: #FF0000; /* Vermelho para destacar o erro */ 
+    font-weight: bold; 
+    margin-bottom: 15px;  
+    animation: slideIn 1s ease-out; 
+}
+@keyframes slideIn { 
+    from { 
+        transform: translateX(100%); 
+        opacity: 0; 
+    } 
+    to { 
+        transform: translateX(0); 
+        opacity: 1; 
+    } 
+}
+#rgError{
+    position: absolute;
+    top: 105px;
+    left: 48%;
+    font-size: 1em;
+    color: #FF0000;
+    margin-top: 5px;
+    animation: slideIn 2s ease-out;
+
+}
+#cpfError{
+    position: absolute; 
+    top: 28px; 
+    left: 78%; 
+    font-size: 1em; 
+    color: #FF0000; 
+    animation: slideIn 1s ease-out;
+}
+#senhaError { 
+    position: absolute;
+    color: #FF0000; 
+    font-weight: bold; 
+    margin-top: 5px;  
+    font-size: 0.99em;
+    top: 28px;
+    left: 60%;
+    animation: slideIn 1s ease-out;
+}
+input.erro { 
+    border-bottom: 3px solid #FF0000;
+}
+label {
+    display: block;
+    margin-left: 12px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #08080896;
+}
+input:focus, 
+select:focus, 
+button:focus { 
+    outline: 3px solid #009ACD; 
+    outline-offset: 2px; 
+}
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="tel"],
+input[type="password"],
+select {
+    width: 95%;
+    padding: 10px;
+    outline: none;
+    border: none; 
+    border-bottom: 3px solid #000000a8; 
+    margin-bottom: 5px;
+    background: transparent; /* Remove fundo */
+    margin-left: 12px;
+    margin-right: 10px;
+    transition: transform 0.3s ease, border-bottom-color 0.3s ease, box-shadow 0.3s ease, margin-top 0.3s ease;
+}
+::placeholder { 
+    font-size: 15px; /* Aumenta o tamanho do texto do placeholder */ 
+    color: #a5a2a2; /* Cor do placeholder */ 
+}
+input[type="text"]:not(:placeholder-shown), 
+input[type="email"]:not(:placeholder-shown), 
+input[type="number"]:not(:placeholder-shown), 
+input[type="tel"]:not(:placeholder-shown), 
+input[type="password"]:not(:placeholder-shown), 
+select:not(:placeholder-shown) { 
+    font-size: 16px; /* Tamanho do texto após digitação */ 
+}
+input[type="submit"] {
+    width: 100%;
+    background-color: #009ACD;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 22px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+input[type="submit"]:hover {
+    background-color:#007BAC; 
+    transform: translateY(-5px);
+}
+p {
+    text-align: center;
+}
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+/* Responsividade */ 
+@media (max-width: 768px) { 
+    .formulario { 
+        max-width: 80%; /* Ajuste a largura para 90% da tela */ 
+    }
+    h1{
+        font-size: 2.5em;
+    }
+    input[type="submit"] {
+        font-size: 20px;
+        position: relative;
+        font-size: 15px;
+        width: 95%;
+        left: 2.1%;
+        padding: 12px;
+     }
+     #cpfError{
+        position: absolute;
+        top: 28px; 
+        left: 75%; 
+        animation: slideIn 1s ease-out;
+     }
+     #senhaError { 
+        position: absolute; 
+        margin-top: 5px;  
+        font-size: 0.99em;
+        top: 30px;
+        left: 52%;
+        animation: slideIn 1s ease-out;
+    }
+    }
+@media (max-width: 584px) {
+    input[type="submit"]{
+        position: relative;
+        font-size: 15px;
+        width: 95%;
+        left: 3%;
+        padding: 12px;
+     }
+    #cpfError{
+        position: absolute;
+        top: 28px; 
+        left: 71%; 
+        animation: slideIn 1s ease-out;
+    }
+    #senhaError { 
+        position: absolute; 
+        margin-top: 5px;  
+        font-size: 0.88em;
+        top: 30px;
+        left: 48%;
+        animation: slideIn 1s ease-out;
+    }
+    }
+@media (max-width: 480px) { 
+    .formulario { 
+        max-width: 80%; /* Ajuste a largura para 100% da tela */ 
+        padding: 10px; 
+    } 
+    h1{
+        font-size: 2em;
+    }
+    input[type="submit"]{
+        position: relative;
+        font-size: 15px;
+        width: 95%;
+        left: 3%;
+        padding: 12px;
+     }
+     #cpfError{
+        position: absolute;
+        top: 28px; 
+        left: 70%; 
+        font-size: 0.99em; 
+        animation: slideIn 1s ease-out;
+    }
+    #senhaError { 
+        position: absolute;  
+        margin-top: 5px;  
+        font-size: 0.88em;
+        top: 30px;
+        left: 40%;
+        animation: slideIn 1s ease-out;
+    }
+    }
+@media (max-width: 396px) {
+    .formulario {
+        width: 70%;
+        max-width: 600px;
+        max-height: 500px; /* Ajuste a altura máxima */
+    }
+    #cpfError{
+        position: absolute;
+        top: 28px; 
+        left: 68%; 
+        font-size: 0.92em; 
+        animation: slideIn 1s ease-out;
+    }
+    #senhaError {   
+        margin-top: 5px;  
+        font-size: 0.82em;
+        top: 30px;
+        left: 38%;
+        animation: slideIn 1s ease-out;
+    }    
+    }
+/* Fim Responsividade */ 
+/*fim criar conta*/
